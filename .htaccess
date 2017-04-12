@@ -1,6 +1,6 @@
 SetEnv ENVIRONMENT staging
 
-<Files "index.php">
+<Files "deploy.php">
     Order Deny,Allow
     Deny From All
     Allow From 104.192.143.0/24
