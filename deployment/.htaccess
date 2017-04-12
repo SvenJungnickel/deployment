@@ -1,0 +1,7 @@
+SetEnv ENVIRONMENT staging
+
+<Files "index.php">
+    Order Deny,Allow
+    Deny From All
+    Allow From 104.192.143.0/24
+</Files>
