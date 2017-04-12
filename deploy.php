@@ -14,6 +14,7 @@ $body = @file_get_contents('php://input');
 
 // The commands
 $commands = array(
+    'git reset --hard HEAD',
     'git pull origin ' . $environment,
     'git submodule sync',
     'git submodule update',
