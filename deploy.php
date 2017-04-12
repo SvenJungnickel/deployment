@@ -23,17 +23,17 @@ base64_encode($agent);
 base64_encode($signature);
 
 if (strpos($agent,'Bitbucket-Webhooks/2.0') !== false){
-    if (hash_equals($signature, verify_request())){
+//    if (hash_equals($signature, verify_request())){
         // Run the commands
         foreach($commands AS $command){
             // Run it
             $tmp = shell_exec($command);
         }
         echo "Deploy successful.";
-    }else{
-        header('HTTP/1.1 403 Forbidden');
-        echo "Invalid request 1.";
-    }
+//    }else{
+//        header('HTTP/1.1 403 Forbidden');
+//        echo "Invalid request 1.";
+//    }
 }else{
     header('HTTP/1.1 403 Forbidden');
     echo "Invalid request 2.";
