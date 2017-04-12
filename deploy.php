@@ -14,7 +14,7 @@ $body=@file_get_contents('php://input');
 
 // The commands
 $commands = array(
-    'git pull origin master',
+    'git pull origin staging',
     'git submodule sync',
     'git submodule update'
 );
