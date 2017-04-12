@@ -2,7 +2,7 @@
 /**
  * GIT DEPLOYMENT SCRIPT
  *
- * Used for automatically deploying websites via github securely, more deets here:
+ * Used for automatically deploying websites via bitbucket securely, more deets here:
  *
  *      https://gist.github.com/limzykenneth/baef1b190c68970d50e1
  */
@@ -22,7 +22,7 @@ $commands = array(
 base64_encode($agent);
 base64_encode($signature);
 
-if (strpos($agent,'GitHub-Hookshot') !== false){
+if (strpos($agent,'Bitbucket-Webhooks/2.0') !== false){
     if (hash_equals($signature, verify_request())){
         // Run the commands
         foreach($commands AS $command){
