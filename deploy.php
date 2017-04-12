@@ -9,7 +9,7 @@
 
 // The header information which will be verified
 $agent=$_SERVER['HTTP_USER_AGENT'];
-$signature=$_SERVER['HTTP_X_HUB_SIGNATURE'];
+$signature=$_GET['SIGNATURE'];
 $body=@file_get_contents('php://input');
 
 // The commands
