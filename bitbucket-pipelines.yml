@@ -3,26 +3,21 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
+image: php:5.6.30
 
+pipelines:
+  default:
+    - step:
+      image: node
+      script:
+        - npm install
+        - npm test
+      services:
+        - mysql
 definitions:
   services:
     mysql:
+      image: mysql
       environment:
         MYSQL_DATABASE: pipelines
-        MYSQL_PASSWORD: test_user_password
-        MYSQL_RANDOM_ROOT_PASSWORD: true
-        MYSQL_ROOT_PASSWORD: my-secret-pw
-        MYSQL_USERNAME: test_user
-      image: mysql
-image: "php:5.6.30"
-pipelines:
-  default:
-    -
-      image: node
-      script:
-        - "npm install"
-        - "npm test"
-      services:
-        - mysql
-      step: ~
-
+        MYSQL_ROOT_PASSWORD: let_me_in
