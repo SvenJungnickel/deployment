@@ -9,4 +9,7 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          - composer install
+          - git reset --hard HEAD
+          - git pull origin staging
+          - git submodule sync
+          - git submodule update
