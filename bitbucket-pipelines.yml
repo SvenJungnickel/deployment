@@ -19,6 +19,7 @@ definitions:
     mysql:
       image: mysql
       environment:
+        MYSQL_ROOT_PASSWORD: my-secret-pw
         MYSQL_DATABASE: pipelines
         MYSQL_RANDOM_ROOT_PASSWORD: yes
         MYSQL_USERNAME: test_user
