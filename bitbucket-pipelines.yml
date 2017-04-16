@@ -3,13 +3,9 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: phpunit/phpunit:5.0.3
+image: php:5.6.30
 
 pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          - git reset --hard HEAD
-          - git pull origin staging
-          - git submodule sync
-          - git submodule update
